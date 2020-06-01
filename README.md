@@ -1,4 +1,4 @@
-# bukkit-version
+# Bukkit Version
 A library for Bukkit version.
 
 [![idea](https://www.elegantobjects.org/intellij-idea.svg)](https://www.jetbrains.com/idea/)
