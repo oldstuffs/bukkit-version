@@ -8,7 +8,7 @@ architect:
   - portlek
 merge:
   script: |
-    ./gradlew build --errors --settings /home/r/settings.xml
+    mvn clean install --errors --settings /home/r/settings.xml
 deploy:
   script: |
     mvn clean deploy --errors --settings /home/r/settings.xml
