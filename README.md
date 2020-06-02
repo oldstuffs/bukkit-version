@@ -8,13 +8,30 @@ A library for Bukkit version.
 ![Maven Central](https://img.shields.io/maven-central/v/io.github.portlek/bukkit-version?label=version)
 
 ## Setup
+<details>
+<summary>Gradle</summary>
+
 ```gradle
-implementation("io.github.portlek:bukkit-version:${version}")
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("io.github.portlek:bukkit-version:${version}")
+}
 ```
+</details>
+
+<details>
+<summary>Maven</summary>
+
 ```xml
-<dependency>
-    <groupId>io.github.portlek</groupId>
-    <artifactId>bukkit-version</artifactId>
-    <version>${version}</version>
-</dependency>
+<dependencies>
+    <dependency>
+        <groupId>io.github.portlek</groupId>
+        <artifactId>bukkit-version</artifactId>
+        <version>${version}</version>
+    </dependency>
+</dependencies>
 ```
+</details>
