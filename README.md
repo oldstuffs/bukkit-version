@@ -7,7 +7,7 @@ A library for Bukkit version.
 [![Build Status](https://travis-ci.com/portlek/bukkit-version.svg?branch=master)](https://travis-ci.com/portlek/bukkit-version)
 ![Maven Central](https://img.shields.io/maven-central/v/io.github.portlek/bukkit-version?label=version)
 
-### Using
+## Setup
 ```gradle
 implementation("io.github.portlek:bukkit-version:${version}")
 ```
