@@ -1,6 +1,7 @@
 package io.github.portlek.bukkitverion;
 
 import io.github.portlek.bukkitversion.BukkitVersion;
+import org.hamcrest.MatcherAssert;
 import org.hamcrest.core.IsEqual;
 import org.junit.jupiter.api.Test;
 import org.llorllale.cactoos.matchers.Assertion;
@@ -13,38 +14,38 @@ final class BukkitVersionTest {
 
     @Test
     void raw() {
-        new Assertion<>(
+        MatcherAssert.assertThat(
             "Cannot get the raw version",
             BukkitVersionTest.VERSION.raw(),
             new IsEqual<>(BukkitVersionTest.MC_VERSION)
-        ).affirm();
+        );
     }
 
     @Test
     void major() {
-        new Assertion<>(
+        MatcherAssert.assertThat(
             "Cannot get the major  version",
             BukkitVersionTest.VERSION.major(),
             new IsEqual<>(1)
-        ).affirm();
+        );
     }
 
     @Test
     void minor() {
-        new Assertion<>(
+        MatcherAssert.assertThat(
             "Cannot get the minor version",
             BukkitVersionTest.VERSION.minor(),
             new IsEqual<>(8)
-        ).affirm();
+        );
     }
 
     @Test
     void micro() {
-        new Assertion<>(
+        MatcherAssert.assertThat(
             "Cannot get the micro version",
             BukkitVersionTest.VERSION.micro(),
             new IsEqual<>(3)
-        ).affirm();
+        );
     }
 
 }

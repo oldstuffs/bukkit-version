@@ -2,6 +2,8 @@ package io.github.portlek.bukkitversion;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import org.bukkit.Bukkit;
 import org.jetbrains.annotations.NotNull;
 
@@ -9,6 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * Gets minecraft version from
  * package version of the server.
  */
+@RequiredArgsConstructor
 public final class BukkitVersion {
 
     /**
@@ -25,31 +28,14 @@ public final class BukkitVersion {
      * Server version text
      */
     @NotNull
+    @Getter
     private final String version;
-
-    /**
-     * @param version Minecraft server package name
-     */
-    public BukkitVersion(@NotNull final String version) {
-        this.version = version;
-    }
 
     /**
      * Initiates with current running server package name
      */
     public BukkitVersion() {
         this(Bukkit.getServer().getClass().getPackage().getName().split("\\.")[3].substring(1));
-    }
-
-    /**
-     * Gets raw string of the version
-     *
-     * @return raw string
-     * output is like that "(major)_(minor)_R(micro)"
-     */
-    @NotNull
-    public String raw() {
-        return this.version;
     }
 
     /**
@@ -82,8 +68,7 @@ public final class BukkitVersion {
     private int get(@NotNull final String key) {
         final Matcher matcher = BukkitVersion.PATTERN.matcher(this.version);
         if (matcher.matches()) {
-            final String group = matcher.group(key);
-            return Integer.parseInt(group);
+            return Integer.parseInt(matcher.group(key));
         }
         return 0;
     }
