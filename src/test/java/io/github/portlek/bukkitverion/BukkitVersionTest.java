@@ -4,7 +4,6 @@ import io.github.portlek.bukkitversion.BukkitVersion;
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.core.IsEqual;
 import org.junit.jupiter.api.Test;
-import org.llorllale.cactoos.matchers.Assertion;
 
 final class BukkitVersionTest {
 
@@ -13,10 +12,10 @@ final class BukkitVersionTest {
     private static final BukkitVersion VERSION = new BukkitVersion(BukkitVersionTest.MC_VERSION);
 
     @Test
-    void raw() {
+    void getVersion() {
         MatcherAssert.assertThat(
             "Cannot get the raw version",
-            BukkitVersionTest.VERSION.raw(),
+            BukkitVersionTest.VERSION.getVersion(),
             new IsEqual<>(BukkitVersionTest.MC_VERSION)
         );
     }
