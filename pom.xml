@@ -34,7 +34,7 @@
         <version>1.7</version>
     </parent>
     <artifactId>bukkit-version</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.4</version>
     <name>bukkit-version</name>
     <description>A library for parsing Bukkit server's versions.</description>
     <url>https://github.com/portlek/bukkit-version</url>
