@@ -1,50 +1,49 @@
 package io.github.portlek.bukkitverion;
 
 import io.github.portlek.bukkitversion.BukkitVersion;
-import org.hamcrest.MatcherAssert;
 import org.hamcrest.core.IsEqual;
 import org.junit.jupiter.api.Test;
+import org.llorllale.cactoos.matchers.Assertion;
 
 final class BukkitVersionTest {
 
-    private static final String MC_VERSION = "1_8_R3";
+  private static final String MC_VERSION = "1_8_R3";
 
-    private static final BukkitVersion VERSION = new BukkitVersion(BukkitVersionTest.MC_VERSION);
+  private static final BukkitVersion VERSION = new BukkitVersion(BukkitVersionTest.MC_VERSION);
 
-    @Test
-    void getVersion() {
-        MatcherAssert.assertThat(
-            "Cannot get the raw version",
-            BukkitVersionTest.VERSION.getVersion(),
-            new IsEqual<>(BukkitVersionTest.MC_VERSION)
-        );
-    }
+  @Test
+  void getVersion() {
+    new Assertion<>(
+      "Cannot get the raw version",
+      BukkitVersionTest.VERSION.getVersion(),
+      new IsEqual<>(BukkitVersionTest.MC_VERSION)
+    ).affirm();
+  }
 
-    @Test
-    void major() {
-        MatcherAssert.assertThat(
-            "Cannot get the major  version",
-            BukkitVersionTest.VERSION.major(),
-            new IsEqual<>(1)
-        );
-    }
+  @Test
+  void major() {
+    new Assertion<>(
+      "Cannot get the major  version",
+      BukkitVersionTest.VERSION.major(),
+      new IsEqual<>(1)
+    ).affirm();
+  }
 
-    @Test
-    void minor() {
-        MatcherAssert.assertThat(
-            "Cannot get the minor version",
-            BukkitVersionTest.VERSION.minor(),
-            new IsEqual<>(8)
-        );
-    }
+  @Test
+  void minor() {
+    new Assertion<>(
+      "Cannot get the minor version",
+      BukkitVersionTest.VERSION.minor(),
+      new IsEqual<>(8)
+    ).affirm();
+  }
 
-    @Test
-    void micro() {
-        MatcherAssert.assertThat(
-            "Cannot get the micro version",
-            BukkitVersionTest.VERSION.micro(),
-            new IsEqual<>(3)
-        );
-    }
-
+  @Test
+  void micro() {
+    new Assertion<>(
+      "Cannot get the micro version",
+      BukkitVersionTest.VERSION.micro(),
+      new IsEqual<>(3)
+    ).affirm();
+  }
 }

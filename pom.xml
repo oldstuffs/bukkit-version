@@ -1,4 +1,4 @@
-<?xmla7a523553bf574429419af69691a6e414695b5ab version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
   ~ MIT License
   ~
@@ -23,35 +23,31 @@
   ~ SOFTWARE.
   ~
   -->
-
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <artifactId>ppom</artifactId>
-        <groupId>io.github.portlek</groupId>
-        <version>1.8.20</version>
-    </parent>
-    <artifactId>bukkit-version</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <name>bukkit-version</name>
-    <description>A library for parsing Bukkit server's versions.</description>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>io.github.portlek</groupId>
+    <artifactId>ppom</artifactId>
+    <version>1.8.20</version>
+  </parent>
+  <artifactId>bukkit-version</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>bukkit-version</name>
+  <description>A library for parsing Bukkit server's versions.</description>
+  <url>https://github.com/portlek/bukkit-version</url>
+  <scm>
     <url>https://github.com/portlek/bukkit-version</url>
-
-    <scm>
-        <connection>scm:git:git://github.com/portlek/bukkit-version.git</connection>
-        <developerConnection>scm:git:ssh://github.com/portlek/bukkit-version.git</developerConnection>
-        <url>https://github.com/portlek/bukkit-version</url>
-    </scm>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.16.1-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
-
+    <connection>scm:git:git://github.com/portlek/bukkit-version.git</connection>
+    <developerConnection>scm:git:ssh://github.com/portlek/bukkit-version.git</developerConnection>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>org.spigotmc</groupId>
+      <artifactId>spigot-api</artifactId>
+      <version>1.16.1-R0.1-SNAPSHOT</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
 </project>
