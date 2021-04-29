@@ -7,3 +7,6 @@ updates:
     time: "10:00"
     timezone: Turkey
   open-pull-requests-limit: 99
+  labesl:
+  - release/patch
+  - automerge
