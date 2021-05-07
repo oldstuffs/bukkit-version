@@ -9,3 +9,4 @@ updates:
   open-pull-requests-limit: 99
   labels:
   - release/patch
+  - automerge
