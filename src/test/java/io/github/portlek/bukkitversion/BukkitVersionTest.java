@@ -1,15 +1,24 @@
-package io.github.portlek.bukkitverion;
+package io.github.portlek.bukkitversion;
 
-import io.github.portlek.bukkitversion.BukkitVersion;
 import org.hamcrest.core.IsEqual;
 import org.junit.jupiter.api.Test;
 import org.llorllale.cactoos.matchers.Assertion;
+import org.llorllale.cactoos.matchers.Throws;
 
 final class BukkitVersionTest {
 
   private static final String MC_VERSION = "1_8_R3";
 
   private static final BukkitVersion VERSION = new BukkitVersion(BukkitVersionTest.MC_VERSION);
+
+  @Test
+  void ctor() {
+    new Assertion<>(
+      "Something went wrong",
+      BukkitVersion::new,
+      new Throws<>(NullPointerException.class)
+    ).affirm();
+  }
 
   @Test
   void getVersion() {
@@ -24,17 +33,8 @@ final class BukkitVersionTest {
   void major() {
     new Assertion<>(
       "Cannot get the major  version",
-      BukkitVersionTest.VERSION.major(),
+      BukkitVersionTest.VERSION.getMajor(),
       new IsEqual<>(1)
-    ).affirm();
-  }
-
-  @Test
-  void minor() {
-    new Assertion<>(
-      "Cannot get the minor version",
-      BukkitVersionTest.VERSION.minor(),
-      new IsEqual<>(8)
     ).affirm();
   }
 
@@ -42,8 +42,17 @@ final class BukkitVersionTest {
   void micro() {
     new Assertion<>(
       "Cannot get the micro version",
-      BukkitVersionTest.VERSION.micro(),
+      BukkitVersionTest.VERSION.getMicro(),
       new IsEqual<>(3)
+    ).affirm();
+  }
+
+  @Test
+  void minor() {
+    new Assertion<>(
+      "Cannot get the minor version",
+      BukkitVersionTest.VERSION.getMinor(),
+      new IsEqual<>(8)
     ).affirm();
   }
 }
