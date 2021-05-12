@@ -24,7 +24,7 @@ final class BukkitVersionTest {
   void major() {
     new Assertion<>(
       "Cannot get the major  version",
-      BukkitVersionTest.VERSION.major(),
+      BukkitVersionTest.VERSION.getMajor(),
       new IsEqual<>(1)
     ).affirm();
   }
@@ -33,7 +33,7 @@ final class BukkitVersionTest {
   void minor() {
     new Assertion<>(
       "Cannot get the minor version",
-      BukkitVersionTest.VERSION.minor(),
+      BukkitVersionTest.VERSION.getMinor(),
       new IsEqual<>(8)
     ).affirm();
   }
@@ -42,7 +42,7 @@ final class BukkitVersionTest {
   void micro() {
     new Assertion<>(
       "Cannot get the micro version",
-      BukkitVersionTest.VERSION.micro(),
+      BukkitVersionTest.VERSION.getMicro(),
       new IsEqual<>(3)
     ).affirm();
   }

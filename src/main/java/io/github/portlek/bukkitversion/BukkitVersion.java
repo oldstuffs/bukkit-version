@@ -1,6 +1,30 @@
+/*
+ * MIT License
+ *
+ * Copyright (c) 2021 Hasan Demirtaş
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ *
+ */
+
 package io.github.portlek.bukkitversion;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.bukkit.Bukkit;
 import org.jetbrains.annotations.NotNull;
@@ -40,6 +64,33 @@ public final class BukkitVersion {
   }
 
   /**
+   * gets major part of the version.
+   *
+   * @return major part.
+   */
+  public int getMajor() {
+    return this.get("major");
+  }
+
+  /**
+   * gets micro part of the version.
+   *
+   * @return micro part.
+   */
+  public int getMicro() {
+    return this.get("micro");
+  }
+
+  /**
+   * gets minor part of the version.
+   *
+   * @return minor part.
+   */
+  public int getMinor() {
+    return this.get("minor");
+  }
+
+  /**
    * obtains the raw version.
    *
    * @return raw version.
@@ -50,33 +101,6 @@ public final class BukkitVersion {
   }
 
   /**
-   * gets major part of the version.
-   *
-   * @return major part.
-   */
-  public int major() {
-    return this.get("major");
-  }
-
-  /**
-   * gets minor part of the version.
-   *
-   * @return minor part.
-   */
-  public int minor() {
-    return this.get("minor");
-  }
-
-  /**
-   * gets micro part of the version.
-   *
-   * @return micro part.
-   */
-  public int micro() {
-    return this.get("micro");
-  }
-
-  /**
    * gets the part from the given key.
    *
    * @param key the key to get.
@@ -84,10 +108,7 @@ public final class BukkitVersion {
    * @return the part of the given key.
    */
   private int get(@NotNull final String key) {
-    final Matcher matcher = BukkitVersion.PATTERN.matcher(this.version);
-    if (matcher.matches()) {
-      return Integer.parseInt(matcher.group(key));
-    }
-    return 0;
+    final var matcher = BukkitVersion.PATTERN.matcher(this.version);
+    return matcher.matches() ? Integer.parseInt(matcher.group(key)) : 0;
   }
 }
