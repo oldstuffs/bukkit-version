@@ -6,7 +6,6 @@
 ## How to Use
 
 ```xml
-
 <dependency>
   <groupId>io.github.portlek</groupId>
   <artifactId>bukkit-version</artifactId>
