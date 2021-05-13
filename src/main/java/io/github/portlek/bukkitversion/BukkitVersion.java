@@ -26,12 +26,18 @@
 package io.github.portlek.bukkitversion;
 
 import java.util.regex.Pattern;
+import lombok.EqualsAndHashCode;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 import org.bukkit.Bukkit;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * gets minecraft version from package version of the server.
  */
+@ToString
+@EqualsAndHashCode
+@RequiredArgsConstructor
 public final class BukkitVersion {
 
   /**
@@ -46,15 +52,6 @@ public final class BukkitVersion {
    */
   @NotNull
   private final String version;
-
-  /**
-   * ctor.
-   *
-   * @param version the version.
-   */
-  public BukkitVersion(@NotNull final String version) {
-    this.version = version;
-  }
 
   /**
    * ctor.
