@@ -21,6 +21,15 @@ final class BukkitVersionTest {
   }
 
   @Test
+  void eq() {
+    new Assertion<>(
+      "The versions are not same",
+      BukkitVersionTest.VERSION,
+      new IsEqual<>(new BukkitVersion(BukkitVersionTest.MC_VERSION))
+    ).affirm();
+  }
+
+  @Test
   void getVersion() {
     new Assertion<>(
       "Cannot get the raw version",
