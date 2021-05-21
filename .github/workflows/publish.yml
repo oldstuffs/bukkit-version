@@ -27,7 +27,7 @@ jobs:
         id: version
         with:
           owner: portlek
-          repo: bukkit-vesion
+          repo: bukkit-version
 
       - uses: actions-ecosystem/action-bump-semver@v1
         id: bump-semver
